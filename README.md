@@ -1,22 +1,29 @@
 # Jeroid Academy — Frontend Rebrand
 
-A responsive, visual-first homepage concept for Jeroid Academy, based on the screenshots supplied in the design discussion.
+Responsive homepage prototype built with **Next.js, TypeScript, and Tailwind CSS**.
 
-## Brand guardrails
-- Preserve Jeroid Academy's navy, yellow, and cyan identity.
-- Do not borrow the official Jeroid trading website's light-blue palette as the primary identity.
-- Treat this as a visual prototype only; no backend, authentication, learning APIs, or real course data are connected.
+## Brand direction
+- **Primary:** Cyan (`#43C6E8`)
+- **Secondary:** Navy (`#101C3A`)
+- **Accent:** Yellow (`#F4D900`)
+- Preserve Jeroid Academy's identity. Do not substitute colours from the official Jeroid trading website.
 
-## Preview locally
-Open `index.html` in a browser. For best results, use a local static server or VS Code Live Server.
+## Run locally
+```bash
+npm install
+npm run dev
+```
+Open `http://localhost:3000`.
 
-## First screen included
-- Responsive navigation
+## Homepage scope
+- Responsive desktop and mobile navigation
 - Hero section with primary and secondary calls to action
 - Illustrative lesson preview card
-- Learning-benefit strip
-- Learning track cards
+- Learning-benefit strip and sample learning tracks
 - Closing CTA and footer
+- Subtle motion, hover transitions, and reduced-motion support
 
-## Next
-Review the desktop and mobile layout, then iterate based on feedback before expanding to additional screens.
+## Prototype limitations
+This is a frontend-only concept. Authentication, course data, AI tutoring, enrolment, and certificates are illustrative and are not connected to a backend. CTA destinations should be wired to approved product flows when available.
+
+The original static prototype files are retained as references while the Next.js implementation is developed.
