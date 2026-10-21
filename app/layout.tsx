@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono, Syne } from "next/font/google";
 import "./globals.css";
+import ScrollMotion from "./components/ScrollMotion";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
 const syne = Syne({ subsets: ["latin"], variable: "--font-syne", weight: ["700", "800"] });
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body className={`${dmSans.variable} ${syne.variable} ${jetBrainsMono.variable}`}>
         {children}
+        <ScrollMotion />
       </body>
     </html>
   );

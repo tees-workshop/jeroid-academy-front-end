@@ -19,16 +19,20 @@ export default function Home() {
     <SiteHeader />
 
     <section className="hero-surface relative">
+      <div className="hero-ambient hero-ambient-one pointer-events-none absolute" aria-hidden="true" />
+      <div className="hero-ambient hero-ambient-two pointer-events-none absolute" aria-hidden="true" />
+      <div className="hero-spark hero-spark-one pointer-events-none absolute" aria-hidden="true">✦</div>
+      <div className="hero-spark hero-spark-two pointer-events-none absolute" aria-hidden="true">✳</div>
       <div className="hero-orbit pointer-events-none absolute -right-24 -top-24 hidden h-[680px] w-[680px] rounded-full lg:block" />
       <div className="relative mx-auto grid max-w-[1320px] items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.04fr_.96fr] lg:gap-12 lg:px-12 lg:py-24">
         <div className="reveal relative z-10"><div className="eyebrow">FREE WEB3 EDUCATION · BUILT FOR AFRICA</div>
-          <h1 className="font-display mt-6 max-w-[720px] text-[clamp(2.8rem,6.4vw,5.6rem)] leading-[.98] font-extrabold tracking-[-.07em] text-[#030D75]">Understand Web3.<br/><span className="hero-highlight">Own what’s next.</span></h1>
+          <h1 className="font-display mt-6 max-w-[720px] text-[clamp(2.8rem,6.4vw,5.6rem)] leading-[.98] font-extrabold tracking-[-.07em] text-[#030D75]">Understand Web3.<br/><span className="hero-highlight hero-headline-motion">Own what’s next.</span></h1>
           <p className="mt-6 max-w-[580px] text-base leading-8 text-[#53617f] sm:text-lg">A clearer way to learn blockchain, crypto and the digital economy. Follow a structured path, test what you know and work towards a certificate — at your own pace.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row"><a className="primary-button yellow-button" href="#start">Start learning free <span aria-hidden="true">→</span></a><a className="outline-button" href="#tracks"><span className="text-xl text-[#00AFEF]" aria-hidden="true">↘</span> Explore the five tracks</a></div>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-semibold text-[#34416e]"><span className="inline-flex items-center gap-2"><span className="check-dot">✓</span> Free to access</span><span className="inline-flex items-center gap-2"><span className="check-dot">✓</span> Learn at your pace</span><span className="inline-flex items-center gap-2"><span className="check-dot">✓</span> Structured progression</span></div>
         </div>
         <div className="reveal reveal-delay relative mx-auto flex min-h-[410px] w-full max-w-[540px] items-center justify-center sm:min-h-[510px]">
-          <div className="absolute h-[300px] w-[300px] rounded-full border border-[#00AFEF]/30 sm:h-[430px] sm:w-[430px]"/><div className="absolute h-[250px] w-[250px] rounded-full border border-dashed border-[#00AFEF]/40 sm:h-[360px] sm:w-[360px]"/>
+          <div className="hero-orbit-ring absolute h-[300px] w-[300px] rounded-full border border-[#00AFEF]/30 sm:h-[430px] sm:w-[430px]"/><div className="absolute h-[250px] w-[250px] rounded-full border border-dashed border-[#00AFEF]/40 sm:h-[360px] sm:w-[360px]"/>
           <div className="float-chip absolute right-0 top-5 z-10 rounded-full border border-[#e1e7f0] bg-white px-4 py-3 text-[11px] font-bold text-[#030D75] shadow-lg sm:right-2"><span className="mr-2 text-[#00AFEF]">✦</span>Small steps. Real understanding.</div>
           <article className="lesson-card relative z-[1] w-[min(100%,370px)] rounded-[26px] border border-white bg-white p-5 sm:p-6">
             <div className="flex items-center justify-between gap-2 text-[10px] font-extrabold tracking-[.13em] text-[#53617f]"><span className="flex items-center gap-2"><i className="h-2 w-2 rounded-full bg-[#00AFEF]"/>LESSON PREVIEW</span><span className="font-data">01 / 05</span></div>

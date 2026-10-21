@@ -203,3 +203,185 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
   .footer-main { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
   .footer-brand-col { grid-column: auto; }
 }
+
+
+/* Subtle section entrances and consistent micro-interactions */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 650ms cubic-bezier(.2,.75,.25,1), transform 650ms cubic-bezier(.2,.75,.25,1);
+}
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.site-header .brand-mark { transition: transform 220ms ease, border-radius 220ms ease; }
+.site-header a:hover .brand-mark { transform: rotate(-5deg) scale(1.04); border-radius: 16px; }
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -7px;
+  height: 2px;
+  background: var(--cyan);
+  transition: right 220ms ease;
+}
+.nav-link:hover::after, .nav-link:focus-visible::after { right: 0; }
+.curriculum-card, .journey-card, .tutor-panel, .proof-grid > div {
+  will-change: auto;
+}
+.curriculum-card:focus-within { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,175,239,.12); }
+.primary-button:active, .outline-button:active { transform: translateY(0) scale(.985); }
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal { opacity: 1; transform: none; }
+  .site-header .brand-mark, .nav-link::after { transition: none; }
+}
+
+
+/* Expressive hero motion: ambient light, orbit, headline shimmer and drifting sparks */
+.hero-surface { isolation: isolate; }
+.hero-surface > .hero-ambient,
+.hero-surface > .hero-spark { z-index: 0; }
+.hero-ambient {
+  width: clamp(180px, 28vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: blur(2px);
+  opacity: .62;
+  pointer-events: none;
+  animation: ambient-drift 13s ease-in-out infinite alternate;
+}
+.hero-ambient-one {
+  top: 4%;
+  right: 13%;
+  background: radial-gradient(circle, rgba(0,175,239,.19) 0%, rgba(0,175,239,.08) 34%, transparent 70%);
+}
+.hero-ambient-two {
+  left: -10%;
+  bottom: -14%;
+  width: clamp(160px, 22vw, 320px);
+  background: radial-gradient(circle, rgba(251,227,106,.28) 0%, rgba(251,227,106,.08) 42%, transparent 72%);
+  animation-delay: -6s;
+  animation-duration: 17s;
+}
+.hero-spark {
+  color: var(--cyan-deep);
+  font-size: 24px;
+  opacity: .55;
+  text-shadow: 0 0 22px rgba(0,175,239,.25);
+  animation: spark-drift 7s ease-in-out infinite;
+}
+.hero-spark-one { top: 18%; left: 47%; }
+.hero-spark-two { right: 8%; bottom: 18%; color: #b59b00; animation-delay: -3.5s; }
+.hero-orbit-ring {
+  animation: orbit-breathe 8s ease-in-out infinite;
+  box-shadow: 0 0 70px rgba(0,175,239,.06), inset 0 0 50px rgba(0,175,239,.035);
+}
+.hero-highlight {
+  display: inline-block;
+  background-size: 220% 100%;
+  background-image: linear-gradient(105deg, var(--cyan-deep) 0%, #00a5df 32%, #4acbf4 48%, var(--cyan-deep) 68%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: headline-shimmer 6s ease-in-out infinite, headline-float 4.5s ease-in-out infinite;
+  position: relative;
+}
+.hero-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: .02em;
+  height: .12em;
+  border-radius: 999px;
+  background: var(--yellow);
+  transform-origin: left;
+  animation: underline-grow 1s .5s cubic-bezier(.2,.75,.25,1) both;
+  z-index: -1;
+}
+@keyframes ambient-drift {
+  0% { transform: translate3d(-12px, 8px, 0) scale(.94); }
+  100% { transform: translate3d(28px, -24px, 0) scale(1.08); }
+}
+@keyframes spark-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(10px, -18px, 0) rotate(22deg); }
+}
+@keyframes orbit-breathe {
+  0%, 100% { transform: scale(.98) rotate(-3deg); opacity: .72; }
+  50% { transform: scale(1.025) rotate(3deg); opacity: 1; }
+}
+@keyframes headline-shimmer {
+  0%, 15% { background-position: 100% 50%; }
+  60%, 100% { background-position: 0% 50%; }
+}
+@keyframes headline-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes underline-grow {
+  from { transform: scaleX(.15); opacity: .45; }
+  to { transform: scaleX(1); opacity: .9; }
+}
+@media (max-width: 639px) {
+  .hero-spark-one { left: auto; right: 14%; top: 7%; }
+  .hero-spark-two { right: 4%; bottom: 10%; }
+  .hero-ambient-one { right: -22%; top: 15%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-ambient, .hero-spark, .hero-orbit-ring, .hero-highlight, .hero-highlight::after {
+    animation: none !important;
+  }
+  .hero-highlight { background-position: 50% 50%; }
+}
+
+
+/* Learning tracks page: animated curriculum field and staggered card entrances */
+.tracks-canvas { isolation: isolate; background: linear-gradient(135deg, #f8fbff 0%, #f1f6ff 55%, #f5fbff 100%); }
+.tracks-canvas::before, .tracks-canvas::after { content: ""; position: absolute; z-index: 0; pointer-events: none; border-radius: 50%; }
+.tracks-canvas::before {
+  width: min(56vw, 680px); aspect-ratio: 1; top: -240px; right: -140px;
+  border: 1px solid rgba(0,175,239,.22);
+  box-shadow: 0 0 0 34px rgba(0,175,239,.035), 0 0 0 78px rgba(0,175,239,.025), inset 0 0 90px rgba(0,175,239,.055);
+  animation: track-orbit 18s ease-in-out infinite alternate;
+}
+.tracks-canvas::after {
+  width: min(38vw, 440px); aspect-ratio: 1; left: -180px; bottom: -180px;
+  background: radial-gradient(circle, rgba(251,227,106,.24), rgba(251,227,106,.06) 45%, transparent 72%);
+  animation: track-glow 12s ease-in-out infinite alternate;
+}
+.tracks-kicker { display: inline-flex; align-items: center; gap: 10px; color: var(--cyan-deep); font-size: 10px; font-weight: 800; letter-spacing: .17em; animation: track-title-enter .65s both; }
+.tracks-kicker span { color: #b59b00; font-size: 17px; animation: spark-drift 5s ease-in-out infinite; }
+.tracks-heading h1 { animation: track-title-enter .75s .08s both; }
+.tracks-heading-dot { color: var(--cyan); }
+.tracks-content > p { animation: track-title-enter .75s .16s both; }
+.track-page-card {
+  position: relative; transform: translateY(22px) scale(.985); opacity: 0;
+  animation: track-card-enter .72s cubic-bezier(.2,.75,.25,1) forwards;
+  transition: transform .28s cubic-bezier(.2,.75,.25,1), box-shadow .28s ease, border-color .28s ease;
+}
+.track-page-card:nth-child(1) { animation-delay: .12s; }
+.track-page-card:nth-child(2) { animation-delay: .22s; }
+.track-page-card:nth-child(3) { animation-delay: .32s; }
+.track-page-card:nth-child(4) { animation-delay: .42s; }
+.track-page-card:nth-child(5) { animation-delay: .52s; }
+.track-page-card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; box-shadow: inset 0 0 0 1px rgba(0,175,239,.55); transition: opacity .28s ease; }
+.track-page-card:hover { transform: translateY(-8px) scale(1.005); border-color: rgba(0,175,239,.65); box-shadow: 0 26px 64px rgba(3,13,117,.14); }
+.track-page-card:hover::after { opacity: 1; }
+.track-page-card h2 { transition: color .22s ease; }
+.track-page-card:hover h2 { color: var(--cyan-deep); }
+.track-page-card a svg { transition: transform .22s ease; }
+.track-page-card a:hover svg { transform: translateX(5px); }
+@keyframes track-card-enter { from { opacity: 0; transform: translateY(22px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes track-title-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes track-orbit { from { transform: translate3d(0,0,0) rotate(-8deg); } to { transform: translate3d(-26px,24px,0) rotate(8deg); } }
+@keyframes track-glow { from { transform: translate3d(0,0,0) scale(.9); } to { transform: translate3d(40px,-22px,0) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) {
+  .tracks-canvas::before, .tracks-canvas::after, .tracks-kicker, .tracks-heading h1, .tracks-content > p, .track-page-card, .tracks-kicker span {
+    animation: none !important; opacity: 1 !important; transform: none !important;
+  }
+  .track-page-card, .track-page-card::after { transition: none !important; }
+}
