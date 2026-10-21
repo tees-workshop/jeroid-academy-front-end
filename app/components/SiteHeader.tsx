@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
-  const navItems = [["Learning tracks", "/tracks"], ["How it works", "/#how"], ["AI tutor", "/#tutor"], ["Jeroid Exchange", "/#exchange"]];
+  const navItems = [["Tracks", "/tracks"], ["How it works", "/#how"], ["AI tutor", "/#tutor"], ["Jeroid Exchange", "/#exchange"]];
   return (
     <header className="site-header">
       <div className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between gap-3 px-4 sm:px-8 lg:px-12">
