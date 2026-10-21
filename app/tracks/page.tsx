@@ -4,79 +4,77 @@ import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Learning tracks — Jeroid Academy",
-  description: "Five free learning tracks, from Beginner to Advanced, plus Career and Industry pathways.",
+  description: "Start with Beginner. Each CBT you pass unlocks the next step, and you can preview every track before then.",
 };
 
 const tracks = [
-  { code: "B-01 – B-05", title: "Beginner", modules: 5, hours: 11, who: "Complete newcomers to crypto and Web3.", unlock: "Open on registration", tone: "cyan", group: "core" },
-  { code: "I-01 – I-05", title: "Intermediate", modules: 5, hours: 14, who: "Learners ready for DeFi, NFTs and Layer 2.", unlock: "Pass the Beginner CBT", tone: "yellow", group: "core" },
-  { code: "A-01 – A-05", title: "Advanced", modules: 5, hours: 19, who: "Developers, researchers and serious builders.", unlock: "Pass the Intermediate CBT", tone: "blue", group: "core" },
-  { code: "C-01 – C-02", title: "Career", modules: 2, hours: 6, who: "Anyone preparing to enter Web3 professionally.", unlock: "Pass the Beginner CBT", tone: "purple", group: "specialist" },
-  { code: "X-01 – X-05", title: "Industry", modules: 5, hours: 12, who: "Finance, agriculture, healthcare, government and media.", unlock: "Pass the Beginner CBT", tone: "green", group: "specialist" },
+  { letter: "B", title: "Beginner", code: "B-01–B-05", description: "Money, blockchains, wallets and staying safe.", modules: 5, hours: 11, unlockedBy: null },
+  { letter: "I", title: "Intermediate", code: "I-01–I-05", description: "Ethereum, DeFi, NFTs, cheaper chains, and how to read a market.", modules: 5, hours: 14, unlockedBy: "Beginner" },
+  { letter: "A", title: "Advanced", code: "A-01–A-05", description: "How apps, tokens, proofs, attacks and rules fit together.", modules: 5, hours: 19, unlockedBy: "Intermediate" },
+  { letter: "C", title: "Career", code: "C-01–C-02", description: "Roles, skills and a portfolio that gets you hired.", modules: 2, hours: 6, unlockedBy: "Beginner" },
+  { letter: "X", title: "Industry", code: "X-01–X-05", description: "Blockchain applied to finance, agriculture, healthcare, government and media.", modules: 5, hours: 12, unlockedBy: "Beginner" },
 ];
 
-const steps = [
-  { n: "01", title: "Start with Beginner", body: "It opens as soon as you register. Work through the five modules at your own pace." },
-  { n: "02", title: "Take the CBT", body: "A computer-based test checks your understanding. If it doesn't go well, you'll see what to revisit." },
-  { n: "03", title: "Unlock what's next", body: "Passing opens Intermediate, Career and Industry. Passing the Intermediate CBT opens Advanced." },
-];
+type Track = (typeof tracks)[number];
 
-function TrackCard({ t, n }: { t: (typeof tracks)[number]; n: number }) {
+// The faint circle / cross pattern behind each card's top banner.
+function pattern(symbol: string, line: string) {
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56' fill='none' stroke='${symbol}' stroke-width='1.5' stroke-linecap='round'><path d='M28 0V56M0 28H56' stroke='${line}' stroke-width='1' stroke-dasharray='3 3'/><circle cx='14' cy='14' r='7'/><circle cx='14' cy='14' r='1.6' fill='${symbol}'/><path d='M37 9l10 10M47 9L37 19'/><path d='M9 37l10 10M19 37L9 47'/><circle cx='42' cy='42' r='7'/><circle cx='42' cy='42' r='1.6' fill='${symbol}'/></svg>`;
+  return `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+}
+
+const unlockedBanner = { backgroundColor: "#030D75", backgroundImage: pattern("rgba(255,255,255,0.2)", "rgba(255,255,255,0.1)") };
+const lockedBanner = { backgroundColor: "#eeeffa", backgroundImage: pattern("#d1d5ec", "#dde0f1") };
+
+function LockIcon({ size = 18 }: { size?: number }) {
   return (
-    <article className={"curriculum-card track-" + t.tone}>
-      <div className="flex items-start justify-between gap-4">
-        <span className="track-number font-data">{String(n).padStart(2, "0")}</span>
-        <span className="track-level font-data">{t.code}</span>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4.5" y="11" width="15" height="10" rx="2.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
+
+function TrackCard({ t }: { t: Track }) {
+  const unlocked = t.unlockedBy === null;
+  return (
+    <article className="overflow-hidden rounded-[26px] border border-[#dfe4f1] bg-white shadow-[0_10px_30px_rgba(3,13,117,.06)]">
+      <div className="flex h-24 items-end justify-between px-4 pb-4" style={unlocked ? unlockedBanner : lockedBanner}>
+        <span className={"font-display grid h-12 w-12 place-items-center rounded-[14px] text-[26px] font-extrabold text-[#030D75] " + (unlocked ? "bg-[#FBE36A]" : "bg-white")} aria-hidden="true">{t.letter}</span>
+        <span className="flex h-12 items-center gap-3">
+          <span className={"font-data text-[13px] tracking-[.06em] " + (unlocked ? "text-white/75" : "text-[#34416e]")}>{t.code}</span>
+          {!unlocked && <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-[#030D75]"><LockIcon size={16} /></span>}
+        </span>
       </div>
-      <h3 className="font-display mt-7 text-2xl font-extrabold tracking-[-.04em] text-[#030D75]">{t.title}</h3>
-      <p className="mt-3 min-h-[52px] text-sm leading-7 text-[#53617f]">{t.who}</p>
-      <div className="mt-5 flex flex-wrap gap-2"><span className="meta-pill">{t.modules} modules</span><span className="meta-pill">≈ {t.hours} hours</span></div>
-      <div className="track-access mt-5"><span className="font-data text-[9px] font-bold uppercase tracking-[.1em]">ACCESS</span><p className="mt-1 text-xs font-semibold leading-5">{t.unlock}</p></div>
+      <div className="p-5">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="font-display text-[26px] leading-tight font-extrabold tracking-[-.02em] text-[#030D75]">{t.title}</h2>
+          <span className={"shrink-0 rounded-lg px-3 py-1 text-[13px] font-medium " + (unlocked ? "bg-[#e6e8f6] text-[#030D75]" : "border border-[#c5cbe0] text-[#53617f]")}>{unlocked ? "Unlocked" : "Locked"}</span>
+        </div>
+        <p className="mt-3 text-base leading-[1.65] text-[#53617f]">{t.description}</p>
+        <p className="font-data mt-4 text-[13px] tracking-[.08em] text-[#6b7390] uppercase">{t.modules} modules · ~{t.hours} hrs</p>
+        {!unlocked && (
+          <p className="mt-4 flex items-center gap-3 text-[17px] text-[#4a5578]"><span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#eceffa] text-[#030D75]"><LockIcon size={15} /></span>Pass the {t.unlockedBy} CBT to unlock</p>
+        )}
+        <a className="mt-5 inline-flex min-h-11 items-center gap-3 text-[17px] font-semibold text-[#030D75] hover:text-[#007CA9]" href="/#start">
+          {unlocked ? "Start this track" : "Preview what's inside"}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
     </article>
   );
 }
 
 export default function TracksPage() {
-  const core = tracks.filter((t) => t.group === "core");
-  const specialist = tracks.filter((t) => t.group === "specialist");
   return (
     <main id="home" className="overflow-hidden">
       <SiteHeader />
-
-      <section className="hero-surface">
-        <div className="mx-auto max-w-[1320px] px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-          <div className="eyebrow">LEARNING TRACKS</div>
-          <h1 className="font-display mt-6 max-w-[760px] text-[clamp(2.4rem,5.6vw,4.8rem)] leading-[1] font-extrabold tracking-[-.065em] text-[#030D75]">Five tracks. <span className="hero-highlight">One clear path.</span></h1>
-          <p className="mt-6 max-w-[620px] text-base leading-8 text-[#53617f] sm:text-lg">Start with the foundations, prove what you know, then unlock deeper levels or a pathway built around your field. Everything is free.</p>
-          <div className="mt-8 flex flex-wrap gap-3"><a className="primary-button yellow-button" href="/#start">Start learning free <span aria-hidden="true">→</span></a><a className="outline-button" href="#path">See how unlocking works</a></div>
-          <div className="mt-10 grid max-w-[640px] grid-cols-3 gap-4">{[["05", "tracks"], ["≈62", "hours in total"], ["₦0", "to learn"]].map(([v, l]) => <div key={l}><strong className="font-data text-2xl text-[#030D75]">{v}</strong><p className="mt-1 text-xs text-[#53617f]">{l}</p></div>)}</div>
+      <div className="bg-[#f4f6fb]">
+        <div className="mx-auto max-w-[1320px] px-4 pt-9 pb-16 sm:px-8 sm:pt-14 lg:px-12">
+          <h1 className="font-display text-[clamp(2.4rem,9vw,4.2rem)] leading-none font-extrabold tracking-[-.04em] text-[#030D75]">Learning tracks</h1>
+          <p className="mt-4 max-w-[640px] text-[19px] leading-[1.55] text-[#53617f]">Start with Beginner. Each CBT you pass unlocks the next step, and you can preview every track before then.</p>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{tracks.map((t) => <TrackCard key={t.title} t={t} />)}</div>
         </div>
-      </section>
-
-      <section id="path" className="mx-auto max-w-[1320px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="track-layout">
-          <div className="track-path-heading"><span className="font-data">01 — 03</span><div><h2 className="font-display text-[17px] font-extrabold tracking-[-.03em] text-[#030D75]">Core learning path</h2><p>Move from the fundamentals to deeper technical understanding, one level at a time.</p></div></div>
-          <div className="track-core-grid">{core.map((t, i) => <TrackCard key={t.title} t={t} n={i + 1} />)}</div>
-          <div className="track-path-heading track-path-secondary"><span className="font-data">04 — 05</span><div><h2 className="font-display text-[17px] font-extrabold tracking-[-.03em] text-[#030D75]">Specialist pathways</h2><p>Open after the Beginner CBT, alongside the core path.</p></div></div>
-          <div className="track-special-grid">{specialist.map((t, i) => <TrackCard key={t.title} t={t} n={i + 4} />)}</div>
-        </div>
-        <p className="mt-6 text-xs leading-6 text-[#53617f]">CBT means computer-based test. Hours are approximate.</p>
-      </section>
-
-      <section className="journey-section">
-        <div className="mx-auto max-w-[1320px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
-          <div className="max-w-[680px]"><div className="eyebrow !text-[#8ce4f5]">HOW UNLOCKING WORKS</div><h2 className="font-display mt-4 text-3xl font-extrabold tracking-[-.05em] text-white sm:text-5xl">Earn your way <span className="text-[#00AFEF]">forward.</span></h2></div>
-          <div className="journey-grid mt-10">{steps.map((s) => <article className="journey-card" key={s.n}><span className="font-data text-xs text-[#8ce4f5]">{s.n} / 03</span><h3 className="font-display mt-6 text-2xl font-extrabold text-white">{s.title}</h3><p className="mt-3 text-sm leading-7 text-white/70">{s.body}</p></article>)}</div>
-        </div>
-      </section>
-
-      <section className="start-section mx-5 my-12 overflow-hidden rounded-[26px] sm:mx-8 lg:mx-auto lg:my-16 lg:max-w-[1224px]">
-        <div className="relative flex flex-col gap-7 p-7 sm:p-10 md:flex-row md:items-center md:justify-between lg:p-12">
-          <div><h2 className="font-display max-w-[620px] text-3xl leading-tight font-extrabold tracking-[-.05em] text-white sm:text-4xl">Ready for your first lesson?</h2><p className="mt-3 text-sm leading-7 text-white/75">Beginner is open as soon as you register.</p></div>
-          <a className="primary-button yellow-button shrink-0" href="/#start">Start learning free <span aria-hidden="true">→</span></a>
-        </div>
-      </section>
-
+      </div>
       <SiteFooter />
     </main>
   );
