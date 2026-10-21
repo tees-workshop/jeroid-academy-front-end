@@ -37,7 +37,7 @@ function LockIcon({ size = 18 }: { size?: number }) {
 function TrackCard({ t }: { t: Track }) {
   const unlocked = t.unlockedBy === null;
   return (
-    <article className="overflow-hidden rounded-[26px] border border-[#dfe4f1] bg-white shadow-[0_10px_30px_rgba(3,13,117,.06)]">
+    <article className="track-page-card overflow-hidden rounded-[26px] border border-[#dfe4f1] bg-white shadow-[0_10px_30px_rgba(3,13,117,.06)]">
       <div className="flex h-24 items-end justify-between px-4 pb-4" style={unlocked ? unlockedBanner : lockedBanner}>
         <span className={"font-display grid h-12 w-12 place-items-center rounded-[14px] text-[26px] font-extrabold text-[#030D75] " + (unlocked ? "bg-[#FBE36A]" : "bg-white")} aria-hidden="true">{t.letter}</span>
         <span className="flex h-12 items-center gap-3">
@@ -55,7 +55,7 @@ function TrackCard({ t }: { t: Track }) {
         {!unlocked && (
           <p className="mt-4 flex items-center gap-3 text-[17px] text-[#4a5578]"><span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#eceffa] text-[#030D75]"><LockIcon size={15} /></span>Pass the {t.unlockedBy} CBT to unlock</p>
         )}
-        <a className="mt-5 inline-flex min-h-11 items-center gap-3 text-[17px] font-semibold text-[#030D75] hover:text-[#007CA9]" href="/#start">
+        <a className="mt-5 inline-flex min-h-11 items-center gap-3 text-[17px] font-semibold text-[#030D75] hover:text-[#007CA9]" href="/signup">
           {unlocked ? "Start this track" : "Preview what's inside"}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         </a>
@@ -66,11 +66,11 @@ function TrackCard({ t }: { t: Track }) {
 
 export default function TracksPage() {
   return (
-    <main id="home" className="overflow-hidden">
+    <main id="home" className="tracks-page overflow-hidden">
       <SiteHeader />
-      <div className="bg-[#f4f6fb]">
-        <div className="mx-auto max-w-[1320px] px-4 pt-9 pb-16 sm:px-8 sm:pt-14 lg:px-12">
-          <h1 className="font-display text-[clamp(2.4rem,9vw,4.2rem)] leading-none font-extrabold tracking-[-.04em] text-[#030D75]">Learning tracks</h1>
+      <div className="tracks-canvas relative overflow-hidden bg-[#f4f6fb]">
+        <div className="tracks-content relative z-[1] mx-auto max-w-[1320px] px-4 pt-9 pb-16 sm:px-8 sm:pt-14 lg:px-12">
+          <div className="tracks-heading"><span className="tracks-kicker font-data">THE LEARNING MAP <span aria-hidden="true">✳</span></span><h1 className="font-display mt-4 text-[clamp(2.4rem,9vw,4.2rem)] leading-none font-extrabold tracking-[-.04em] text-[#030D75]">Learning tracks<span className="tracks-heading-dot">.</span></h1></div>
           <p className="mt-4 max-w-[640px] text-[19px] leading-[1.55] text-[#53617f]">Start with Beginner. Each CBT you pass unlocks the next step, and you can preview every track before then.</p>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{tracks.map((t) => <TrackCard key={t.title} t={t} />)}</div>
         </div>
