@@ -1,6 +1,5 @@
-"use client";
-
-import { useState } from "react";
+import SiteHeader from "./components/SiteHeader";
+import SiteFooter from "./components/SiteFooter";
 
 const tracks = [
   { n: "01", title: "Beginner", modules: 5, hours: 11, description: "Build a clear foundation in blockchain, crypto, wallets and the language of Web3.", access: "Open to everyone", tone: "cyan" },
@@ -16,19 +15,8 @@ const journey = [
 ];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const closeMenu = () => setMenuOpen(false);
-  const navItems = [["Learning tracks", "#tracks"], ["How it works", "#how"], ["AI tutor", "#tutor"], ["Jeroid Exchange", "#exchange"]];
   return <main id="home" className="overflow-hidden">
-    <header className="site-header">
-      <div className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-12">
-        <a href="#home" onClick={closeMenu} className="flex items-center gap-3" aria-label="Jeroid Academy home"><span className="brand-mark">J</span><span className="font-display text-[17px] font-extrabold tracking-[.04em] text-[#030D75]">JEROID <small className="block pt-0.5 font-data text-[9px] tracking-[.28em] text-[#007CA9]">ACADEMY</small></span></a>
-        <nav className="hidden items-center gap-7 text-sm font-semibold text-[#34416e] md:flex" aria-label="Main navigation">{navItems.map(([label, href]) => <a key={href} className="nav-link" href={href}>{label}</a>)}</nav>
-        <div className="hidden items-center gap-5 text-sm font-bold md:flex"><a className="text-[#030D75] hover:text-[#007CA9]" href="#start">Need access?</a><a className="primary-button !px-4 !py-3" href="#start">Start free <span aria-hidden="true">↗</span></a></div>
-        <button className="grid h-11 w-11 place-items-center rounded-xl border border-[#dbe4f2] text-xl text-[#030D75] md:hidden" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? "×" : "☰"}</button>
-      </div>
-      {menuOpen && <nav id="mobile-navigation" className="grid gap-1 border-t border-[#e1e7f0] bg-white px-5 py-4 md:hidden" aria-label="Mobile navigation">{[...navItems, ["Get started", "#start"]].map(([label, href]) => <a key={href} className="rounded-lg px-3 py-3 font-semibold text-[#030D75] hover:bg-[#f1faff]" onClick={closeMenu} href={href}>{label}</a>)}</nav>}
-    </header>
+    <SiteHeader />
 
     <section className="hero-surface relative">
       <div className="hero-orbit pointer-events-none absolute -right-24 -top-24 hidden h-[680px] w-[680px] rounded-full lg:block" />
@@ -73,29 +61,6 @@ export default function Home() {
 
     <section id="start" className="start-section mx-5 mb-12 overflow-hidden rounded-[26px] sm:mx-8 lg:mx-auto lg:mb-16 lg:max-w-[1224px]"><div className="relative flex flex-col gap-7 p-7 sm:p-10 md:flex-row md:items-center md:justify-between lg:p-12"><div className="pointer-events-none absolute -right-5 -top-16 text-[190px] leading-none text-white/[.04]" aria-hidden="true">✳</div><div className="relative"><div className="font-data text-[10px] font-bold tracking-[.15em] text-[#8ce4f5]">YOUR NEXT CHAPTER STARTS HERE</div><h2 className="font-display mt-4 max-w-[650px] text-3xl leading-tight font-extrabold tracking-[-.05em] text-white sm:text-4xl">Start with curiosity. Leave with understanding.</h2><p className="mt-3 max-w-[580px] text-sm leading-7 text-white/75">The learning paths are free. Review the curriculum, then use the Academy access route shared by your programme team to sign in or create an account.</p></div><a className="primary-button yellow-button relative shrink-0" href="#tracks">Explore learning tracks <span aria-hidden="true">↗</span></a></div></section>
 
-    <footer className="site-footer">
-      <div className="footer-main mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-        <div className="footer-brand-col">
-          <a href="#home" className="inline-flex items-center gap-3" aria-label="Jeroid Academy, back to top"><span className="brand-mark">J</span><span className="font-display text-[17px] font-extrabold tracking-[.04em] text-white">JEROID <small className="block pt-0.5 font-data text-[9px] tracking-[.28em] text-[#00AFEF]">ACADEMY</small></span></a>
-          <p>Jeroid Academy is the education arm of Jeroid Cyto Exchange. Lessons are for education only and are not financial advice.</p>
-        </div>
-        <nav aria-label="Footer tracks">
-          <h2 className="footer-heading font-data">TRACKS</h2>
-          <ul className="footer-list">{["Beginner", "Intermediate", "Advanced", "Career", "Industry"].map(label => <li key={label}><a href="#tracks">{label}</a></li>)}</ul>
-        </nav>
-        <nav aria-label="Footer academy">
-          <h2 className="footer-heading font-data">ACADEMY</h2>
-          <ul className="footer-list">
-            <li><a href="#start">Start learning free</a></li>
-            <li><a href="#start">Sign in</a></li>
-            <li><span className="footer-pending">Verify a certificate</span></li>
-            <li><span className="footer-pending">Privacy policy</span></li>
-            <li><span className="footer-pending">Terms of use</span></li>
-            <li><a href="#exchange">Jeroid exchange</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div className="footer-bottom"><div className="mx-auto flex max-w-[1320px] flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12"><p>Crypto assets are volatile; never invest money you can’t afford to lose.</p><p className="footer-meta">© {new Date().getFullYear()} Jeroid Academy <span aria-hidden="true">·</span> <a href="#home">Back to top <span aria-hidden="true">↑</span></a></p></div></div>
-    </footer>
+    <SiteFooter />
   </main>;
 }
