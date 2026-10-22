@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const allItems = [
   { label: "Tracks", href: "/tracks" },
   { label: "How it works", href: "/#how" },
-  { label: "AI tutor", href: "/#tutor" },
+  { label: "AI tutor", href: "/signin" },
   { label: "Verify a certificate", href: "/verify-certificate" },
 ];
 
@@ -55,7 +55,7 @@ export default function TracksHeader({ hideHowItWorks = false, showStartFree = f
           {items.map(item => <a key={item.href} href={item.href} className="text-[15px] font-semibold text-[#030D75] transition-colors hover:text-[#007CA9]">{item.label}</a>)}
         </nav>
         <div className="flex items-center gap-3">
-        {showStartFree && <a href="/signup" className="inline-flex min-h-11 items-center justify-center rounded-xl px-5 text-[15px] font-bold transition-colors hover:bg-[#0a1a9a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AFEF]" style={{ backgroundColor: "#030D75", color: "#FFFFFF" }}>Start free</a>}
+        {showStartFree && <a href="/signup" className="inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-xl px-3 text-sm leading-none font-bold transition-colors hover:bg-[#0a1a9a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00AFEF] sm:min-h-11 sm:px-5 sm:text-[15px]" style={{ backgroundColor: "#030D75", color: "#FFFFFF" }}>Start free</a>}
         <button type="button" onClick={() => setOpen(v => !v)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="tracks-mobile-sidebar" className="grid h-11 w-11 place-items-center text-[#030D75] md:hidden">
           {open ? <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 6 12 12M18 6 6 18"/></svg> : <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>}
         </button>
