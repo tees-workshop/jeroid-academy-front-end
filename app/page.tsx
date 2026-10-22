@@ -66,8 +66,7 @@ export default function Home() {
           <div className="eyebrow">HELP WHEN A CONCEPT FEELS NEW</div>
           <h2 className="font-display mt-4 text-4xl font-extrabold leading-tight tracking-[-.06em] text-[#030D75] sm:text-5xl">Stuck? Ask without leaving the lesson.</h2>
           <p className="mt-5 text-base leading-8 text-[#53617f]">The tutor already knows which lesson you're reading, so you can ask “explain this simply” or “give me a Nigerian example” and get an answer about exactly that. It explains; it never gives investment tips.</p>
-          <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold text-[#030D75]"><span className="tutor-feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4"><path d="M12 3v18M3 12h18"/></svg>Lesson-aware help</span><span className="tutor-feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l4 2"/></svg>Answers in context</span></div>
-          <a className="primary-button yellow-button mt-7" href="#tracks">Explore the curriculum <span aria-hidden="true">→</span></a>
+          
         </div>
         <div className="tutor-demo-wrap">
           <div className="tutor-demo-orbit" aria-hidden="true" />
