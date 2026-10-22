@@ -14,8 +14,8 @@ export default function SiteFooter() {
           <h2 className="footer-heading font-data">ACADEMY</h2>
           <ul className="footer-list">
             <li><a href="/#start">Start learning free</a></li>
-            <li><a href="/#start">Sign in</a></li>
-            <li><span className="footer-pending">Verify a certificate</span></li>
+            <li><a href="/signin">Sign in</a></li>
+            <li><a href="/verify-certificate">Verify a certificate</a></li>
             <li><span className="footer-pending">Privacy policy</span></li>
             <li><span className="footer-pending">Terms of use</span></li>
             <li><a href="/#exchange">Jeroid exchange</a></li>
