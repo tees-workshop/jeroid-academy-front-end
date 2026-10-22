@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const allItems = [
   { label: "Tracks", href: "/tracks" },
   { label: "How it works", href: "/#how" },
-  { label: "AI tutor", href: "/signin" },
+  { label: "AI tutor", href: "/#tutor" },
   { label: "Verify a certificate", href: "/verify-certificate" },
 ];
 
