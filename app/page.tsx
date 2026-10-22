@@ -1,5 +1,6 @@
 import TracksHeader from "./components/TracksHeader";
 import SiteFooter from "./components/SiteFooter";
+import TutorPromptDemo from "./components/TutorPromptDemo";
 
 const tracks = [
   { n: "B", title: "Beginner", modules: 5, hours: 11, description: "Money, blockchains, wallets and staying safe.", access: "Open on registration", tone: "cyan" },
@@ -77,16 +78,7 @@ export default function Home() {
               <span className="ml-auto rounded-full bg-[#e7f9ff] px-3 py-1 font-data text-[9px] font-bold text-[#007CA9]">LESSON 03</span>
             </div>
             <div className="tutor-context mt-6 flex items-center gap-3"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white text-[#007CA9]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></span><span><small className="block font-data text-[9px] font-bold tracking-[.12em] text-[#007CA9]">YOU'RE LEARNING</small><strong className="mt-1 block text-sm text-[#030D75]">What is a blockchain?</strong></span><span className="ml-auto text-xs font-semibold text-[#007CA9]">In context ✓</span></div>
-            <div className="tutor-chat mt-5" aria-live="polite">
-              <div className="tutor-bubble tutor-question" data-chat-question>Can you explain this simply?</div>
-              <div className="tutor-bubble tutor-answer" data-chat-answer>A blockchain is like a shared notebook. Many people keep the same record, and new entries are checked before everyone updates their copy.</div>
-            </div>
-            <p className="mt-5 text-xs font-bold text-[#53617f]">Try asking:</p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              <button type="button" className="tutor-prompt" data-prompt="simple">Explain this simply <span>↗</span></button>
-              <button type="button" className="tutor-prompt" data-prompt="nigeria">Give me a Nigerian example <span>↗</span></button>
-              <button type="button" className="tutor-prompt" data-prompt="analogy">Use an everyday analogy <span>↗</span></button>
-            </div>
+            <TutorPromptDemo />
             <div className="tutor-input-row mt-4"><span className="text-sm text-[#53617f]">Ask about this lesson…</span><span className="tutor-send" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span></div>
             <p className="mt-4 flex items-center gap-2 text-[10px] leading-5 text-[#53617f]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 shrink-0 text-[#007CA9]"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Learning support only — not investment advice.</p>
           </div>
