@@ -739,9 +739,9 @@ html, body { max-width: 100%; }
 @media (max-width: 900px) { .trust-card-grid { grid-template-columns: 1fr; } .trust-card { min-height: 0; } }
 @media (prefers-reduced-motion: reduce) { .trust-card { transition: none; } .trust-card:hover { transform: none; } }
 
-/* Compact the trust cards and align the section heading to the left */
-.trust-card-grid { gap: 14px; }
-.trust-card { min-height: 0; align-items: center; gap: 13px; border-radius: 16px; padding: 18px; }
-.trust-card-icon { width: 40px; height: 40px; border-radius: 12px; }
-.trust-card-icon svg { width: 20px; height: 20px; }
-@media (max-width: 900px) { .trust-card { padding: 16px; } }
+/* Smaller, text-only trust cards */
+.trust-card-grid { gap: 12px; }
+.trust-card { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-height: 0; border-radius: 12px; padding: 14px 16px; }
+.trust-card h3 { line-height: 1.35; }
+@media (min-width: 901px) { .trust-card { padding: 14px 16px; } }
+@media (max-width: 900px) { .trust-card { padding: 13px 15px; } }
