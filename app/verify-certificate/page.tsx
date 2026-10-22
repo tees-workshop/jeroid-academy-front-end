@@ -16,8 +16,8 @@ export default function VerifyCertificatePage() {
   return <main className="min-h-screen bg-[#f4f6fb]">
     <TracksHeader />
     <section className="mx-auto max-w-[900px] px-5 pb-20 pt-14 sm:px-8 sm:pt-20">
-      <div className="mx-auto max-w-[680px] text-center">
-        <span className="mx-auto grid h-[76px] w-[76px] place-items-center rounded-full bg-[#030D75] text-[#FBE36A]"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
+      <div className="mx-auto max-w-[680px] text-left">
+        <span className="mb-0 grid h-[76px] w-[76px] place-items-center rounded-full bg-[#030D75] text-[#FBE36A]"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
         <p className="mt-7 font-data text-[12px] font-bold tracking-[.17em] text-[#007CA9]">CREDENTIAL CHECK</p>
         <h1 className="font-display mt-4 text-[clamp(2.2rem,6vw,3.8rem)] font-extrabold leading-[1.05] tracking-[-.06em] text-[#030D75]">Verify a Jeroid Academy certificate</h1>
         <p className="mt-5 text-[17px] leading-7 text-[#4a5578] sm:text-[19px]">Enter the certificate ID to confirm who earned it, for which track, and when. No account needed.</p>
