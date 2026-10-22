@@ -24,7 +24,7 @@ function Brand() {
 }
 
 function Progress({ step }: { step: number }) {
-  const labels = ["YOUR ACCOUNT", "YOUR GOAL", "YOUR PATH", "ALL SET"];
+  const labels = ["YOUR ACCOUNT", "YOUR GOAL", "YOUR PATH", "START LEARNING"];
   return (
     <div className="mt-8" aria-label={`Step ${step} of 4`}>
       <p className="font-data text-[12px] font-bold uppercase tracking-[.16em] text-[#007CA9] sm:text-[14px]">
@@ -165,9 +165,37 @@ export default function SignupPage() {
                 <span className="font-data text-[16px] text-[#687395]">2</span>
               </article>
             </div>
-            <button type="button" onClick={() => setNotice("Step 4 is intentionally not implemented yet because its reference screen hasn’t been provided. Your choices are not saved.")} className="mt-8 inline-flex min-h-[76px] w-full items-center justify-center gap-3 rounded-[18px] bg-[#030D75] px-5 text-[19px] font-semibold text-white transition hover:bg-[#0a1a9a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00AFEF]">
+            <button type="button" onClick={() => { setNotice(""); setStep(4); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="mt-8 inline-flex min-h-[76px] w-full items-center justify-center gap-3 rounded-[18px] bg-[#030D75] px-5 text-[19px] font-semibold text-white transition hover:bg-[#0a1a9a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00AFEF]">
               Looks good <span aria-hidden="true">→</span>
             </button>
+            <button type="button" onClick={goBack} className="mx-auto mt-5 flex min-h-12 items-center gap-3 px-4 text-[17px] font-medium text-[#030D75] hover:text-[#007CA9]"><span aria-hidden="true">←</span> Back</button>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="mt-10 sm:mt-14">
+            <h1 className="font-display max-w-[680px] text-[clamp(2.8rem,8vw,4.4rem)] font-extrabold leading-[1.02] tracking-[-.065em]">
+              You’re ready<br className="sm:hidden" /> to start
+            </h1>
+            <p className="mt-6 max-w-[680px] text-[18px] leading-[1.65] text-[#4a5578] sm:text-[21px]">
+              Your first lesson is short. Your progress saves automatically.
+            </p>
+            <article className="mt-10 flex items-center gap-5 rounded-[28px] border-[3px] border-[#030D75] bg-white p-5 shadow-[0_12px_30px_rgba(3,13,117,.05)] sm:p-8">
+              <span className="grid h-[76px] w-[76px] shrink-0 place-items-center rounded-[20px] bg-[#030D75] text-[#FBE36A]" aria-hidden="true">
+                <svg viewBox="0 0 40 40" width="42" height="42" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="20" cy="20" r="15" /><path d="M20 10v10l7 4" />
+                </svg>
+              </span>
+              <div className="min-w-0">
+                <p className="font-data text-[13px] tracking-[.12em] text-[#007CA9] sm:text-[15px]">B-01 · LESSON 1</p>
+                <h2 className="mt-3 font-display text-[22px] font-bold leading-tight text-[#030D75] sm:text-[28px]">What money really does</h2>
+                <p className="mt-3 text-[17px] text-[#4a5578] sm:text-[20px]">About 9 minutes</p>
+              </div>
+            </article>
+            <a href="/tracks" className="mt-10 inline-flex min-h-[76px] w-full items-center justify-center gap-3 rounded-[18px] border-[3px] border-[#030D75] bg-[#FBE36A] px-5 text-[19px] font-semibold text-[#030D75] transition hover:bg-[#f7d943] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00AFEF]">
+              Start lesson 1 <span aria-hidden="true">→</span>
+            </a>
+            <p className="mt-3 text-center text-xs leading-5 text-[#687395]">Lesson reader is not connected in this frontend preview yet.</p>
             <button type="button" onClick={goBack} className="mx-auto mt-5 flex min-h-12 items-center gap-3 px-4 text-[17px] font-medium text-[#030D75] hover:text-[#007CA9]"><span aria-hidden="true">←</span> Back</button>
           </div>
         )}
