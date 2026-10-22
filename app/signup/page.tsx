@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState, type FormEvent } from "react";
 
 const goals = [
   { title: "Understand crypto from scratch", description: "I'm new and want the basics explained simply." },
