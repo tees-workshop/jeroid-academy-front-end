@@ -73,7 +73,7 @@ const sections = [
   {
     title: "Changes",
     paragraphs: [
-      "If this policy changes in a way that affects how we use your information, we will update this page and the date at the top. The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.",
+      "If this policy changes in a way that affects how we use your information, we will update this page and the date at the top. The terms of use sit alongside this policy.",
     ],
   },
 ];
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
                 <div className="min-w-0">
                     <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
-                      <p key={paragraph} className="mt-4 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph.startsWith("The <a href=\"/terms\"") ? <>The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.</> : paragraph}</p>
+                      <p key={paragraph} className="mt-4 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph.includes("The terms of use sit alongside this policy.") ? <>{paragraph.split("The terms of use sit alongside this policy.")[0]}The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.</> : paragraph}</p>
                     ))}
                     {section.items && (
                       <ul className="mt-4 grid gap-4">
