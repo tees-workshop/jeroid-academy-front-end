@@ -12,7 +12,7 @@ const sections = [
   },
   {
     title: "Your account",
-    paragraphs: [
+    items: [
       "You must be 18 or over to create an account.",
       "Use a name you are happy to see on a certificate. Employers can check that name on the public verify page.",
       "Keep your password and, if you use one, your Jeroid login to yourself. We will never ask for a seed phrase, 2FA codes or your exchange password.",
@@ -21,7 +21,7 @@ const sections = [
   },
   {
     title: "Lessons, CBTs and certificates",
-    paragraphs: [
+    items: [
       "Track content can change as we add or correct lessons. Passing a CBT shows you met the standard on that day, not that markets or products stay the same.",
       "Do not copy, share or publish CBT questions or answers. We may revoke a certificate if we believe it was earned unfairly.",
       "A revoked certificate still has a public page, marked as revoked, so employers are not misled.",
@@ -78,7 +78,7 @@ export default function TermsPage() {
             <section id={`section-${index + 1}`} key={section.title} className="py-2">
               <div className="min-w-0">
                 <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
-                {section.paragraphs.map((paragraph) => (
+                {section.paragraphs?.map((paragraph) => (
                   <p key={paragraph} className="mt-2 text-[15px] leading-7 text-[#53617f]">
                     {paragraph.includes("academy@jeroid.co") ? (
                       <>
@@ -95,6 +95,15 @@ export default function TermsPage() {
                     ) : paragraph}
                   </p>
                 ))}
+                {section.items && (
+                  <ul className="mt-2 grid gap-1">
+                    {section.items.map((item) => (
+                      <li key={item} className="relative pl-5 text-[15px] leading-7 text-[#53617f] before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-[#030D75]">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </section>
           ))}
