@@ -98,13 +98,13 @@ export default function PrivacyPolicyPage() {
                 <div className="min-w-0">
                     <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
-                      <p key={paragraph} className="mt-2 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph.includes("The terms of use sit alongside this policy.") ? <>{paragraph.split("The terms of use sit alongside this policy.")[0]}The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.</> : paragraph}</p>
+                      <p key={paragraph} className="mt-2 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] border-b-2 border-[#00AFEF] pb-[1px]">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph.includes("The terms of use sit alongside this policy.") ? <>{paragraph.split("The terms of use sit alongside this policy.")[0]}The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.</> : paragraph}</p>
                     ))}
                     {section.items && (
                       <ul className="mt-2 grid gap-1">
                         {section.items.map(([label, description]) => (
                           <li key={label} className="relative pl-5 text-[15px] leading-7 text-[#53617f] before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-[#030D75]">
-                            {label}: {description}
+                            <><span className="font-semibold text-[#030D75] border-b-2 border-[#00AFEF] pb-[1px]">{label}</span>: {description}</>
                           </li>
                         ))}
                       </ul>
