@@ -745,3 +745,25 @@ html, body { max-width: 100%; }
 .trust-card h3 { line-height: 1.35; }
 @media (min-width: 901px) { .trust-card { padding: 16px 18px; } }
 @media (max-width: 900px) { .trust-card { border-radius: 20px; padding: 14px 16px; } }
+
+
+/* Consistent page entrances and interactive feedback across all routes */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body > div main {
+  animation: page-enter 420ms cubic-bezier(.2,.75,.25,1) both;
+}
+a, button, input, textarea, select {
+  transition-timing-function: cubic-bezier(.2,.75,.25,1);
+}
+main a:not(.primary-button):not(.outline-button):not(.locked-track-cta):not(.beginner-track-cta) {
+  text-underline-offset: .2em;
+}
+main a:active, main button:active {
+  transform: translateY(1px);
+}
+@media (prefers-reduced-motion: reduce) {
+  body > div main { animation: none !important; }
+}
