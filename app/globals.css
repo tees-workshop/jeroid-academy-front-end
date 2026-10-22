@@ -130,13 +130,9 @@ a:focus-visible, button:focus-visible {
 .stat-item span { max-width: none; }
 .stat-item strong {
   color: var(--navy);
-  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   letter-spacing: -.07em;
   line-height: 1;
-  text-decoration: underline;
-  text-decoration-color: var(--yellow);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 6px;
 }
 .stat-item span { max-width: 100px; font-size: 12px; line-height: 1.5; color: var(--muted); font-weight: 650; }
 .curriculum-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 25px; border: 1px solid #e1e7f0; border-radius: 22px; background: #fff; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
@@ -177,7 +173,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
 @media (max-width: 639px) {
   .stats-table { grid-template-rows: repeat(2, minmax(104px, auto)); }
   .stat-item { align-items: center; flex-direction: column; gap: 8px; padding: 20px 8px; }
-  .stat-item strong { font-size: clamp(2.15rem, 8vw, 2.8rem); }
+  .stat-item strong { font-size: clamp(2.6rem, 9vw, 3.3rem); }
   .stat-item span { font-size: 12px; }
   .curriculum-card { padding: 22px; }
   .lesson-card { transform: none; }
