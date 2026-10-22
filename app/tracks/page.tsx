@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SiteHeader from "../components/SiteHeader";
+import TracksHeader from "../components/TracksHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export const metadata: Metadata = {
@@ -67,7 +67,7 @@ function TrackCard({ t }: { t: Track }) {
 export default function TracksPage() {
   return (
     <main id="home" className="tracks-page overflow-hidden">
-      <SiteHeader />
+      <TracksHeader />
       <div className="tracks-canvas relative overflow-hidden bg-[#f4f6fb]">
         <div className="tracks-content relative z-[1] mx-auto max-w-[1320px] px-4 pt-9 pb-16 sm:px-8 sm:pt-14 lg:px-12">
           <div className="tracks-heading"><span className="tracks-kicker font-data">THE LEARNING MAP <span aria-hidden="true">✳</span></span><h1 className="font-display mt-4 text-[clamp(2.4rem,9vw,4.2rem)] leading-none font-extrabold tracking-[-.04em] text-[#030D75]">Learning tracks<span className="tracks-heading-dot">.</span></h1></div>
