@@ -729,3 +729,12 @@ html, body { max-width: 100%; }
   }
   .certificate-card, .certificate-verify-button, .certificate-verify-button span { transition: none !important; }
 }
+
+/* Trust section: compact rounded-rectangle proof cards */
+.trust-section { background: linear-gradient(145deg, #f4fbff 0%, #fff 52%, #fffbed 100%); }
+.trust-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.trust-card { display: flex; align-items: flex-start; gap: 17px; min-width: 0; min-height: 150px; border: 1px solid #dce8f2; border-radius: 20px; padding: 24px; background: rgba(255,255,255,.92); box-shadow: 0 12px 32px rgba(3,13,117,.055); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.trust-card:hover { transform: translateY(-4px); border-color: rgba(0,175,239,.65); box-shadow: 0 20px 42px rgba(3,13,117,.1); }
+.trust-card-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border: 1px solid #b9eaff; border-radius: 14px; background: #effaff; color: #007ca9; }
+@media (max-width: 900px) { .trust-card-grid { grid-template-columns: 1fr; } .trust-card { min-height: 0; } }
+@media (prefers-reduced-motion: reduce) { .trust-card { transition: none; } .trust-card:hover { transform: none; } }
