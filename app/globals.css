@@ -170,7 +170,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
   .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
-  .stat-item { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .stat-item { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .stat-item strong { font-size: clamp(2.15rem, 8vw, 2.8rem); }
+  .stat-item span { font-size: 12px; }
   .curriculum-card { padding: 22px; }
   .lesson-card { transform: none; }
 }
