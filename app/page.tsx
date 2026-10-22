@@ -94,7 +94,7 @@ export default function Home() {
           <div className="eyebrow">LEARN HERE. PRACTISE WITH CONFIDENCE.</div>
           <h2 className="font-display mt-4 max-w-[620px] text-4xl font-extrabold leading-tight tracking-[-.06em] text-[#030D75] sm:text-5xl">Learn here. Practise with confidence on Jeroid.</h2>
           <p className="mt-5 max-w-[620px] text-base leading-8 text-[#53617f]">Jeroid Academy is the education arm of the Jeroid exchange. When a lesson is relevant, like after the DeFi module, you'll see a gentle suggestion to try it for real. Never a pop-up, and never in the middle of a lesson.</p>
-          <a className="primary-button yellow-button mt-7 inline-flex" href="https://jeroidcyto.com" target="_blank" rel="noreferrer">Visit Jeroid exchange <span aria-hidden="true">↗</span></a>
+          <a className="primary-button yellow-button mt-7 inline-flex" href="https://jeroidcyto.com" target="_blank" rel="noreferrer">Visit Jeroid exchange</a>
         </div>
         <article className="certificate-card">
           <div className="certificate-card-top">
