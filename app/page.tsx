@@ -86,7 +86,28 @@ export default function Home() {
       </div>
     </section>
 
-    <section id="exchange" className="exchange-section"><div className="mx-auto grid max-w-[1320px] gap-8 px-5 py-12 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-12 lg:py-16"><div><div className="font-data text-[10px] font-bold tracking-[.15em] text-[#FBE36A]">PART OF THE JEROID ECOSYSTEM</div><h2 className="font-display mt-4 text-3xl font-extrabold tracking-[-.05em] text-white sm:text-4xl">Learn the ideas behind the digital economy.</h2><p className="mt-4 max-w-[720px] text-sm leading-7 text-white/75">Jeroid Academy is the education arm of Jeroid Cyto Exchange. Build your understanding of Web3 concepts here before exploring how they connect to the wider digital-asset ecosystem. Learning content is educational and is not financial advice.</p></div><div className="exchange-mark" aria-hidden="true">J<span>↗</span></div></div></section>
+    <section id="exchange" className="learn-here-section relative overflow-hidden">
+      <div className="learn-here-glow learn-here-glow-one" aria-hidden="true" />
+      <div className="learn-here-glow learn-here-glow-two" aria-hidden="true" />
+      <div className="relative mx-auto grid max-w-[1320px] items-center gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[.95fr_1.05fr] lg:gap-14 lg:px-12 lg:py-24">
+        <div className="learn-here-copy">
+          <div className="eyebrow">LEARN HERE. PRACTISE WITH CONFIDENCE.</div>
+          <h2 className="font-display mt-4 max-w-[620px] text-4xl font-extrabold leading-tight tracking-[-.06em] text-[#030D75] sm:text-5xl">Learn here. Practise with confidence on Jeroid.</h2>
+          <p className="mt-5 max-w-[620px] text-base leading-8 text-[#53617f]">Jeroid Academy is the education arm of the Jeroid exchange. When a lesson is relevant, like after the DeFi module, you'll see a gentle suggestion to try it for real. Never a pop-up, and never in the middle of a lesson.</p>
+          <a className="primary-button yellow-button mt-7 inline-flex" href="https://jeroidcyto.com" target="_blank" rel="noreferrer">Visit Jeroid exchange <span aria-hidden="true">↗</span></a>
+        </div>
+        <article className="certificate-card">
+          <div className="certificate-card-top">
+            <span className="font-data text-[10px] font-bold tracking-[.15em] text-[#007CA9]">CERTIFICATES EMPLOYERS CAN VERIFY</span>
+            <span className="certificate-seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-2.5 4.5 2.5-1-9"/><path d="m10 8 1.4 1.4L14.5 6"/></svg></span>
+          </div>
+          <div className="certificate-validity"><span className="certificate-validity-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="m5 12 4 4L19 6"/></svg></span><span>Valid certificate</span></div>
+          <p className="mt-5 text-sm leading-7 text-[#53617f] sm:text-base sm:leading-8">Every certificate has its own ID and public page. Share the link on LinkedIn or X, or send it with a job application; anyone can confirm it's real without logging in.</p>
+          <a className="certificate-verify-button mt-7 inline-flex w-full items-center justify-center gap-3 sm:w-auto" href="/verify-certificate">Verify a certificate <span aria-hidden="true">→</span></a>
+          <div className="certificate-card-foot"><span aria-hidden="true">✓</span> Public verification · No login required</div>
+        </article>
+      </div>
+    </section>
 
     <section className="social-proof-section"><div className="mx-auto grid max-w-[1320px] gap-8 px-5 py-14 sm:px-8 md:grid-cols-[.8fr_1.2fr] md:items-center lg:px-12 lg:py-16"><div><div className="eyebrow">MADE FOR THE CURIOUS</div><h2 className="font-display mt-4 text-3xl font-extrabold tracking-[-.05em] text-[#030D75] sm:text-4xl">A more approachable start to Web3.</h2></div><div className="proof-grid"><div><strong>Self-paced</strong><p>Learn around your schedule, one concept at a time.</p></div><div><strong>Structured</strong><p>Follow clear tracks instead of piecing together random resources.</p></div><div><strong>Progress-led</strong><p>Use assessments to check understanding and guide your next step.</p></div></div></div></section>
 
