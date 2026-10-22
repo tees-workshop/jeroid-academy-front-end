@@ -122,7 +122,12 @@ a:focus-visible, button:focus-visible {
   border-top: 1px solid #e3f5fc;
   border-bottom: 1px solid #e8edf5;
 }
-.stat-item { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.stats-table { grid-template-rows: repeat(2, minmax(112px, auto)); }
+.stat-item { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; min-width: 0; padding: 22px 12px; text-align: center; }
+.stat-cell-left { border-right: 1px solid #dceaf3; }
+.stat-cell-top { border-bottom: 1px solid #dceaf3; }
+.stat-cell-bottom { border-bottom: 0; }
+.stat-item span { max-width: none; }
 .stat-item strong {
   color: var(--navy);
   font-size: clamp(1.7rem, 3vw, 2.35rem);
@@ -170,7 +175,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
   .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
-  .stat-item { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .stats-table { grid-template-rows: repeat(2, minmax(104px, auto)); }
+  .stat-item { align-items: center; flex-direction: column; gap: 8px; padding: 20px 8px; }
   .stat-item strong { font-size: clamp(2.15rem, 8vw, 2.8rem); }
   .stat-item span { font-size: 12px; }
   .curriculum-card { padding: 22px; }
