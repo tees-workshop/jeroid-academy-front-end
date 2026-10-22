@@ -127,7 +127,7 @@ export default function SignupPage() {
         {step === 2 && (
           <div className="mt-8 sm:mt-10">
             <h1 className="font-display text-[clamp(2.5rem,7.5vw,4.1rem)] font-extrabold leading-[1.02] tracking-[-.065em]">
-              Welcome{name.trim() ? `, ${name.trim().split(/\\s+/)[0]}` : ""}. What brings you here?
+              Welcome{name.trim() ? `, ${name.trim().split(/\s+/)[0]}` : ""}. What brings you here?
             </h1>
             <p className="mt-5 max-w-[720px] text-[18px] leading-[1.65] text-[#4a5578] sm:text-[21px]">Pick the one that fits best. You can explore everything later.</p>
             <fieldset className="mt-8 grid gap-4">
