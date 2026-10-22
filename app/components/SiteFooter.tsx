@@ -16,13 +16,13 @@ export default function SiteFooter() {
             <li><a href="/signup">Start learning free</a></li>
             <li><a href="/signin">Sign in</a></li>
             <li><a href="/verify-certificate">Verify a certificate</a></li>
-            <li><span className="footer-pending">Privacy policy</span></li>
-            <li><span className="footer-pending">Terms of use</span></li>
+            <li><a href="/privacy-policy">Privacy policy</a></li>
+            <li><a href="/terms">Terms of use</a></li>
             <li><a href="/#exchange">Jeroid exchange</a></li>
           </ul>
         </nav>
       </div>
-      <div className="footer-bottom"><div className="mx-auto flex max-w-[1320px] flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12"><p>Crypto assets are volatile; never invest money you can’t afford to lose.</p><p className="footer-meta">© {new Date().getFullYear()} Jeroid Academy <span aria-hidden="true">·</span> <a href="#home">Back to top <span aria-hidden="true">↑</span></a></p></div></div>
+      <div className="footer-bottom"><div className="mx-auto flex max-w-[1320px] flex-col gap-3 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12"><p>Crypto assets are volatile; never invest money you can’t afford to lose.</p><p className="footer-meta">© {new Date().getFullYear()} Jeroid Academy <span aria-hidden="true">·</span> <a href="/#home">Back to top <span aria-hidden="true">↑</span></a></p></div></div>
     </footer>
   );
 }
