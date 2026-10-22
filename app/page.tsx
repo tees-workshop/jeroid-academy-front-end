@@ -2,11 +2,11 @@ import TracksHeader from "./components/TracksHeader";
 import SiteFooter from "./components/SiteFooter";
 
 const tracks = [
-  { n: "01", title: "Beginner", modules: 5, hours: 11, description: "Money, blockchains, wallets and staying safe.", access: "Open on registration", tone: "cyan" },
-  { n: "02", title: "Intermediate", modules: 5, hours: 14, description: "Ethereum, DeFi, NFTs, cheaper chains, and how to read a market.", access: "Unlock after passing the Beginner CBT", tone: "yellow" },
-  { n: "03", title: "Advanced", modules: 5, hours: 19, description: "How apps, tokens, proofs, attacks and rules fit together.", access: "Unlock after passing the Intermediate CBT", tone: "blue" },
-  { n: "04", title: "Career", modules: 2, hours: 6, description: "Roles, skills and a portfolio that gets you hired.", access: "Unlock after passing the Beginner CBT", tone: "purple" },
-  { n: "05", title: "Industry", modules: 5, hours: 12, description: "Blockchain applied to finance, agriculture, healthcare, government and media.", access: "Unlock after passing the Beginner CBT", tone: "green" },
+  { n: "B", title: "Beginner", modules: 5, hours: 11, description: "Money, blockchains, wallets and staying safe.", access: "Open on registration", tone: "cyan" },
+  { n: "I", title: "Intermediate", modules: 5, hours: 14, description: "Ethereum, DeFi, NFTs, cheaper chains, and how to read a market.", access: "Unlock after passing the Beginner CBT", tone: "yellow" },
+  { n: "A", title: "Advanced", modules: 5, hours: 19, description: "How apps, tokens, proofs, attacks and rules fit together.", access: "Unlock after passing the Intermediate CBT", tone: "blue" },
+  { n: "C", title: "Career", modules: 2, hours: 6, description: "Roles, skills and a portfolio that gets you hired.", access: "Unlock after passing the Beginner CBT", tone: "purple" },
+  { n: "X", title: "Industry", modules: 5, hours: 12, description: "Blockchain applied to finance, agriculture, healthcare, government and media.", access: "Unlock after passing the Beginner CBT", tone: "green" },
 ];
 const journey = [
   { n: "01", title: "Learn", body: "Work through structured lessons at your own pace, with concepts explained in clear, approachable language.", symbol: "↗" },
