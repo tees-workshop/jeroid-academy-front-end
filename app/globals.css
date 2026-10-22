@@ -738,3 +738,10 @@ html, body { max-width: 100%; }
 .trust-card-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border: 1px solid #b9eaff; border-radius: 14px; background: #effaff; color: #007ca9; }
 @media (max-width: 900px) { .trust-card-grid { grid-template-columns: 1fr; } .trust-card { min-height: 0; } }
 @media (prefers-reduced-motion: reduce) { .trust-card { transition: none; } .trust-card:hover { transform: none; } }
+
+/* Compact the trust cards and align the section heading to the left */
+.trust-card-grid { gap: 14px; }
+.trust-card { min-height: 0; align-items: center; gap: 13px; border-radius: 16px; padding: 18px; }
+.trust-card-icon { width: 40px; height: 40px; border-radius: 12px; }
+.trust-card-icon svg { width: 20px; height: 20px; }
+@media (max-width: 900px) { .trust-card { padding: 16px; } }
