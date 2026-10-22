@@ -752,7 +752,7 @@ html, body { max-width: 100%; }
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-body > div main {
+body main {
   animation: page-enter 420ms cubic-bezier(.2,.75,.25,1) both;
 }
 a, button, input, textarea, select {
@@ -765,5 +765,5 @@ main a:active, main button:active {
   transform: translateY(1px);
 }
 @media (prefers-reduced-motion: reduce) {
-  body > div main { animation: none !important; }
+  body main { animation: none !important; }
 }
