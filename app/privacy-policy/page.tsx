@@ -80,27 +80,17 @@ const sections = [
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#f6f9fd] text-[#030D75]">
+    <main className="min-h-screen bg-white text-[#53617f]">
       <TracksHeader />
-      <section className="relative overflow-hidden border-b border-[#e1e7f0] bg-white">
-        <div className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full border border-[#00AFEF]/20 shadow-[0_0_0_35px_rgba(0,175,239,.035),0_0_0_75px_rgba(0,175,239,.025)]" />
-        <div className="relative mx-auto max-w-[1100px] px-5 py-14 sm:px-8 sm:py-20 lg:px-12">
-          <p className="eyebrow font-data">YOUR DATA. YOUR CHOICES.</p>
-          <h1 className="font-display mt-5 max-w-[760px] text-[clamp(2.8rem,7vw,5.4rem)] font-extrabold leading-[.98] tracking-[-.065em]">
-            Privacy <span className="text-[#007CA9]">policy.</span>
-          </h1>
-          <p className="mt-6 max-w-[640px] text-[17px] leading-8 text-[#53617f] sm:text-[19px]">
-            A clear explanation of the information Jeroid Academy uses to provide your learning experience.
-          </p>
-          <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#e1e7f0] bg-[#f8fbff] px-4 py-2.5 text-sm font-semibold text-[#53617f]">
-            <span className="h-2 w-2 rounded-full bg-[#00AFEF]" />
-            Last updated 15 October 2026
-          </div>
+      <section className="border-b border-[#e1e7f0] bg-white">
+        <div className="mx-auto max-w-[1100px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
+          <h1 className="font-display text-[clamp(2rem,5vw,3rem)] font-extrabold leading-tight tracking-[-.04em] text-[#030D75]">Privacy policy</h1>
+          <p className="mt-2 text-sm text-[#53617f]">Last updated 15 October 2026</p>
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-[1100px] gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-14 lg:px-12">
-        <aside className="h-fit rounded-2xl border border-[#e1e7f0] bg-white p-5 lg:sticky lg:top-24">
+      <div className="mx-auto max-w-[900px] px-5 py-8 sm:px-8 sm:py-10 lg:px-12">
+        <aside className="hidden">
           <p className="font-data text-[10px] font-bold tracking-[.16em] text-[#007CA9]">ON THIS PAGE</p>
           <nav aria-label="Privacy policy sections" className="mt-3 grid gap-1">
             {sections.map((section, index) => (
@@ -111,11 +101,11 @@ export default function PrivacyPolicyPage() {
           </nav>
           <div className="mt-5 rounded-xl bg-[#eaf9ff] p-4">
             <p className="text-sm font-bold">Questions about your data?</p>
-            <a href="mailto:academy@jeroid.co" className="mt-2 inline-block break-all text-sm font-semibold text-[#007CA9] underline underline-offset-4">academy@jeroid.co</a>
+            <a href="mailto:academy@jeroid.co" className="mt-2 inline-block break-all text-sm font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>
           </div>
         </aside>
 
-        <article className="min-w-0 rounded-2xl border border-[#e1e7f0] bg-white px-5 py-7 shadow-[0_12px_38px_rgba(3,13,117,.035)] sm:px-8 sm:py-10">
+        <article className="min-w-0">
           <p className="border-b border-[#e8edf5] pb-7 text-[15px] leading-7 text-[#53617f]">
             We believe you should understand what happens to your information. This policy explains our practices and the choices available to you.
           </p>
@@ -127,14 +117,14 @@ export default function PrivacyPolicyPage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] sm:text-[25px]">{section.title}</h2>
+                    <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
-                      <p key={paragraph} className="mt-4 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#007CA9] underline underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph}</p>
+                      <p key={paragraph} className="mt-4 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph}</p>
                     ))}
                     {section.items && (
                       <ul className="mt-4 grid gap-4">
                         {section.items.map(([label, description]) => (
-                          <li key={label} className="border-l-2 border-[#00AFEF] pl-4">
+                          <li key={label} className="relative pl-5 before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-full before:bg-[#030D75]">
                             <h3 className="text-[14px] font-bold text-[#030D75]">{label}</h3>
                             <p className="mt-1 text-[15px] leading-7 text-[#53617f]">{description}</p>
                           </li>
@@ -149,7 +139,7 @@ export default function PrivacyPolicyPage() {
           <div className="mt-8 rounded-xl border border-[#d9edf7] bg-[#f3fbff] p-5 sm:p-6">
             <p className="font-display text-lg font-extrabold">Need help or want to make a request?</p>
             <p className="mt-2 text-sm leading-6 text-[#53617f]">Contact our team about your personal information, account, or this policy.</p>
-            <a href="mailto:academy@jeroid.co" className="mt-4 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#030D75] px-5 text-sm font-bold text-white transition hover:bg-[#0a1a9a]">Email Jeroid Academy <span aria-hidden="true" className="ml-2">↗</span></a>
+            <a href="mailto:academy@jeroid.co" className="mt-4 inline-flex min-h-11 items-center justify-center font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">Email Jeroid Academy <span aria-hidden="true" className="ml-2">↗</span></a>
           </div>
           <p className="mt-8 text-xs leading-6 text-[#7b85a2]">This page reflects the policy text provided for the Jeroid Academy prototype.</p>
         </article>
