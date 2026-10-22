@@ -82,21 +82,21 @@ export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-white text-[#53617f]">
       <TracksHeader />
-      <section className="border-b border-[#e1e7f0] bg-white">
+      <section className="bg-white">
         <div className="mx-auto max-w-[1100px] px-5 py-10 sm:px-8 sm:py-12 lg:px-12">
-          <h1 className="font-display text-[clamp(2rem,5vw,3rem)] font-extrabold leading-tight tracking-[-.04em] text-[#030D75]">Privacy policy</h1>
+          <h1 className="font-display text-[clamp(2rem,5vw,3rem)] font-extrabold leading-tight tracking-[-.04em] text-[#030D75] underline decoration-[#00AFEF] underline-offset-8">Privacy policy</h1>
           <p className="mt-2 text-sm text-[#53617f]">Last updated 15 October 2026</p>
         </div>
       </section>
 
-      <div className="mx-auto max-w-[900px] px-5 py-8 sm:px-8 sm:py-10 lg:px-12">
+      <div className="mx-auto max-w-[900px] px-5 pt-3 pb-8 sm:px-8 sm:pt-3 sm:pb-10 lg:px-12">
 
         <article className="min-w-0">
           <div>
             {sections.map((section, index) => (
               <section id={`section-${index + 1}`} key={section.title} className="py-2">
                 <div className="min-w-0">
-                    <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
+                    <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] underline decoration-[#00AFEF] underline-offset-4 sm:text-[25px]">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
                       <p key={paragraph} className="mt-2 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph.includes("The terms of use sit alongside this policy.") ? <>{paragraph.split("The terms of use sit alongside this policy.")[0]}The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.</> : paragraph}</p>
                     ))}
