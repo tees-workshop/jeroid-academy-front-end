@@ -3,7 +3,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-main mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
         <div className="footer-brand-col">
-          <a href="/" className="inline-flex items-center gap-3" aria-label="Jeroid Academy, back to top"><span className="brand-mark">J</span><span className="font-display text-[17px] font-extrabold tracking-[.04em] text-white">JEROID <small className="block pt-0.5 font-data text-[9px] tracking-[.28em] text-[#00AFEF]">ACADEMY</small></span></a>
+          <a href="/" className="inline-flex items-center gap-3" aria-label="Jeroid Academy, back to top"><span className="brand-mark after:!bg-[#00AFEF] !text-[#FBE36A]">J</span><span className="font-display text-[22px] leading-none font-extrabold tracking-[.03em] text-white">JEROID<small className="block pt-1 font-data text-[10px] font-medium tracking-[.3em] text-[#00AFEF]">ACADEMY</small></span></a>
           <p>Jeroid Academy is the education arm of Jeroid Cyto Exchange. Lessons are for education only and are not financial advice.</p>
         </div>
         <nav aria-label="Footer tracks">
@@ -13,9 +13,9 @@ export default function SiteFooter() {
         <nav aria-label="Footer academy">
           <h2 className="footer-heading font-data">ACADEMY</h2>
           <ul className="footer-list">
-            <li><a href="/#start">Start learning free</a></li>
-            <li><a href="/#start">Sign in</a></li>
-            <li><span className="footer-pending">Verify a certificate</span></li>
+            <li><a href="/signup">Start learning free</a></li>
+            <li><a href="/signin">Sign in</a></li>
+            <li><a href="/verify-certificate">Verify a certificate</a></li>
             <li><span className="footer-pending">Privacy policy</span></li>
             <li><span className="footer-pending">Terms of use</span></li>
             <li><a href="/#exchange">Jeroid exchange</a></li>

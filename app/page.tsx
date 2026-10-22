@@ -1,4 +1,4 @@
-import SiteHeader from "./components/SiteHeader";
+import TracksHeader from "./components/TracksHeader";
 import SiteFooter from "./components/SiteFooter";
 
 const tracks = [
@@ -15,8 +15,8 @@ const journey = [
 ];
 
 export default function Home() {
-  return <main id="home" className="overflow-hidden">
-    <SiteHeader />
+  return <main id="home" className="w-full overflow-x-clip">
+    <TracksHeader showStartFree />
 
     <section className="hero-surface relative">
       <div className="hero-ambient hero-ambient-one pointer-events-none absolute" aria-hidden="true" />
