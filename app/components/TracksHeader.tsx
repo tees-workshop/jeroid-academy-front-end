@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 const allItems = [
   { label: "Tracks", href: "/tracks" },
   { label: "How it works", href: "/#how" },
-  { label: "AI tutor", href: "/signin" },
+  { label: "AI tutor", href: "/#tutor" },
   { label: "Verify a certificate", href: "/verify-certificate" },
 ];
 
 function BrandLogo({ large = false }: { large?: boolean }) {
   return (
-    <a href="/" aria-label="Jeroid Academy home" className="inline-flex items-center gap-3">
-      <span className={`brand-mark after:!bg-[#00AFEF] !text-[#FBE36A] ${large ? "!h-[52px] !w-[52px] !rounded-[14px] !text-[31px]" : ""}`}>J</span>
-      <span className={`font-display font-extrabold leading-none tracking-[.03em] text-[#030D75] ${large ? "text-[23px]" : "text-[22px]"}`}>JEROID<small className={`block font-data font-medium tracking-[.3em] text-[#007CA9] ${large ? "pt-1.5 text-[10px] tracking-[.35em]" : "pt-1 text-[10px]"}`}>ACADEMY</small></span>
+    <a href="/" aria-label="Jeroid Academy home" className="inline-flex items-center gap-2.5">
+      <span className={`brand-mark after:!bg-[#00AFEF] !text-[#FBE36A] ${large ? "!h-[40px] !w-[40px] !rounded-[11px] !text-[24px]" : ""}`}>J</span>
+      <span className={`font-display font-extrabold leading-none tracking-[.03em] text-[#030D75] ${large ? "text-[18px]" : "text-[22px]"}`}>JEROID<small className={`block font-data font-medium tracking-[.3em] text-[#007CA9] ${large ? "pt-1 text-[8px] tracking-[.3em]" : "pt-1 text-[10px]"}`}>ACADEMY</small></span>
     </a>
   );
 }
@@ -64,13 +64,13 @@ export default function TracksHeader({ hideHowItWorks = false, showStartFree = f
     </header>
     {open && <div className="fixed inset-0 z-[100] touch-none overscroll-none md:hidden">
       <button type="button" aria-label="Close navigation menu" onClick={closeMenu} className="absolute inset-0 bg-[#030D75]/50" />
-      <aside id="tracks-mobile-sidebar" className="absolute inset-y-0 right-0 flex w-[86%] max-w-[400px] flex-col bg-white shadow-[-18px_0_50px_rgba(3,13,117,.12)]" aria-label="Mobile navigation">
-        <div className="flex min-h-[88px] items-center justify-between gap-3 border-b border-[#e8ebf4] px-5 sm:px-6">
+      <aside id="tracks-mobile-sidebar" className="absolute inset-y-0 right-0 flex w-[78%] max-w-[320px] flex-col bg-white shadow-[-18px_0_50px_rgba(3,13,117,.12)]" aria-label="Mobile navigation">
+        <div className="flex min-h-[72px] items-center justify-between gap-2 border-b border-[#e8ebf4] px-4 sm:px-5">
           <BrandLogo large />
-          <button type="button" onClick={closeMenu} aria-label="Close menu" className="grid h-10 w-10 shrink-0 place-items-center text-[#53617f]"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+          <button type="button" onClick={closeMenu} aria-label="Close menu" className="grid h-9 w-9 shrink-0 place-items-center text-[#53617f]"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
         </div>
-        <nav className="grid content-start gap-1 px-6 pt-8 sm:px-7" aria-label="Mobile tracks navigation">
-          {items.map(item => <a key={item.href} href={item.href} onClick={closeMenu} className="py-3.5 text-[16px] font-medium text-[#030D75] transition-colors hover:text-[#007CA9] sm:text-[18px]">{item.label}</a>)}
+        <nav className="grid content-start gap-0.5 px-5 pt-5 sm:px-6" aria-label="Mobile tracks navigation">
+          {items.map(item => <a key={item.href} href={item.href} onClick={closeMenu} className="py-2.5 text-[14px] font-medium text-[#030D75] transition-colors hover:text-[#007CA9] sm:text-[15px]">{item.label}</a>)}
         </nav>
       </aside>
     </div>}

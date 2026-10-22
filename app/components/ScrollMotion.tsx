@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function ScrollMotion() {
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section"));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main > section, main > div > section"));
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (reducedMotion || !("IntersectionObserver" in window)) return;
