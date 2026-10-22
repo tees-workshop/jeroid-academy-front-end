@@ -386,3 +386,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-
   }
   .track-page-card, .track-page-card::after { transition: none !important; }
 }
+
+
+/* Mobile layout guard: keep page sections within the viewport without changing desktop spacing. */
+html, body { max-width: 100%; }
+@media (max-width: 639px) {
+  body { overflow-x: clip; }
+  #home > section { min-width: 0; }
+  #home .hero-surface .mx-auto { min-width: 0; }
+  #home .primary-button, #home .outline-button { max-width: 100%; white-space: normal; line-height: 1.35; text-align: center; }
+  #home .hero-surface .flex.flex-col.gap-3 > a { width: 100%; }
+}
