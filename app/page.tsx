@@ -15,7 +15,7 @@ const journey = [
 ];
 
 export default function Home() {
-  return <main id="home" className="overflow-hidden">
+  return <main id="home" className="w-full overflow-x-clip">
     <TracksHeader showStartFree />
 
     <section className="hero-surface relative">
