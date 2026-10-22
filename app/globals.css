@@ -421,13 +421,13 @@ html, body { max-width: 100%; }
 .beginner-track-card { overflow: hidden; }
 .beginner-card-banner { margin: -25px -25px 22px; padding: 20px 25px; background: var(--navy); color: white; }
 .beginner-track-number { background: var(--cyan); color: var(--navy); }
-.beginner-unlocked { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 5px; border-radius: 999px; padding: 7px 10px; background: #e4f9ee; color: #147347; font-size: 10px; font-weight: 800; white-space: nowrap; }
+.beginner-unlocked { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 5px; border-radius: 999px; padding: 7px 10px; background: #e4f9ee; color: #147347; font-size: 12px; font-weight: 800; white-space: nowrap; }
 .locked-track-cta { color: var(--navy); transition: color .2s ease; }
 .locked-track-cta svg { flex: 0 0 auto; color: #69748d; }
 .locked-track-cta > span { color: var(--cyan-deep); transition: transform .18s ease; }
 .locked-track-cta:hover { color: var(--cyan-deep); }
 .locked-track-cta:hover > span { transform: translate(3px, -2px); }
-.beginner-track-meta { margin-top: 20px; color: var(--cyan-deep); font-size: 10px; font-weight: 800; letter-spacing: .035em; }
+.beginner-track-meta { margin-top: 20px; color: var(--cyan-deep); font-size: 12px; font-weight: 800; letter-spacing: .035em; }
 .beginner-track-cta { color: var(--navy); transition: color .2s ease, gap .2s ease; }
 .beginner-track-cta span { color: var(--cyan-deep); transition: transform .18s ease; }
 .beginner-track-cta:hover { color: var(--cyan-deep); }
