@@ -113,7 +113,7 @@ export default function SignupPage() {
                 <span className="text-[14px] leading-6 text-[#687395]">At least 8 characters.</span>
               </label>
               <p className="pt-1 text-[14px] leading-6 text-[#687395]">
-                By creating an account you agree to the <a href="#terms" className="text-[#030D75] underline decoration-[#00AFEF] decoration-2 underline-offset-4">Terms of use</a> and <a href="#privacy" className="text-[#030D75] underline decoration-[#00AFEF] decoration-2 underline-offset-4">Privacy policy</a>.
+                By creating an account you agree to the <a href="/terms" className="text-[#030D75] underline decoration-[#00AFEF] decoration-2 underline-offset-4">Terms of use</a> and <a href="/privacy-policy" className="text-[#030D75] underline decoration-[#00AFEF] decoration-2 underline-offset-4">Privacy policy</a>.
               </p>
               <button type="submit" className="mt-1 inline-flex min-h-[76px] w-full items-center justify-center gap-3 rounded-[18px] bg-[#030D75] px-5 text-[19px] font-semibold text-white transition hover:bg-[#0a1a9a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#00AFEF]">
                 Create free account <span aria-hidden="true">→</span>
