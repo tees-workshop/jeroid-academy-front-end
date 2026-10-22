@@ -116,9 +116,9 @@ export default function Home() {
           <h2 className="font-display mt-4 text-3xl font-extrabold tracking-[-.05em] text-[#030D75] sm:text-4xl">Built by people who know Nigerian crypto.</h2>
         </div>
         <div className="trust-card-grid mt-10">
-          <article className="trust-card"><p className="font-data text-[10px] font-bold tracking-[.13em] text-[#007CA9]">LOCAL EXPERIENCE</p><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">From Jeroid, trading since 2018</h3></article>
-          <article className="trust-card"><p className="font-data text-[10px] font-bold tracking-[.13em] text-[#007CA9]">QUALITY MANAGEMENT</p><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">ISO 9001:2015 certified</h3></article>
-          <article className="trust-card"><p className="font-data text-[10px] font-bold tracking-[.13em] text-[#007CA9]">BUSINESS RECOGNITION</p><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">BusinessDay Top 100 SMEs</h3></article>
+          <article className="trust-card"><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">From Jeroid, trading since 2018</h3></article>
+          <article className="trust-card"><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">ISO 9001:2015 certified</h3></article>
+          <article className="trust-card"><h3 className="font-display text-base font-bold tracking-[-.025em] text-[#030D75]">BusinessDay Top 100 SMEs</h3></article>
         </div>
       </div>
     </section>
