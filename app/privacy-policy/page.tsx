@@ -73,7 +73,7 @@ const sections = [
   {
     title: "Changes",
     paragraphs: [
-      "If this policy changes in a way that affects how we use your information, we will update this page and the date at the top. The terms of use sit alongside this policy.",
+      "If this policy changes in a way that affects how we use your information, we will update this page and the date at the top. The <a href="/terms" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">terms of use</a> sit alongside this policy.",
     ],
   },
 ];
@@ -90,33 +90,12 @@ export default function PrivacyPolicyPage() {
       </section>
 
       <div className="mx-auto max-w-[900px] px-5 py-8 sm:px-8 sm:py-10 lg:px-12">
-        <aside className="hidden">
-          <p className="font-data text-[10px] font-bold tracking-[.16em] text-[#007CA9]">ON THIS PAGE</p>
-          <nav aria-label="Privacy policy sections" className="mt-3 grid gap-1">
-            {sections.map((section, index) => (
-              <a key={section.title} href={`#section-${index + 1}`} className="rounded-lg px-3 py-2 text-sm font-medium text-[#53617f] transition-colors hover:bg-[#eaf9ff] hover:text-[#030D75]">
-                {section.title}
-              </a>
-            ))}
-          </nav>
-          <div className="mt-5 rounded-xl bg-[#eaf9ff] p-4">
-            <p className="text-sm font-bold">Questions about your data?</p>
-            <a href="mailto:academy@jeroid.co" className="mt-2 inline-block break-all text-sm font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>
-          </div>
-        </aside>
 
         <article className="min-w-0">
-          <p className="border-b border-[#e8edf5] pb-7 text-[15px] leading-7 text-[#53617f]">
-            We believe you should understand what happens to your information. This policy explains our practices and the choices available to you.
-          </p>
-          <div className="divide-y divide-[#e8edf5]">
-            {sections.map((section, index) => (
-              <section id={`section-${index + 1}`} key={section.title} className="scroll-mt-28 py-7 first:pt-7 last:pb-2">
-                <div className="flex items-start gap-4">
-                  <span className="mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#eaf9ff] font-data text-[11px] font-bold text-[#007CA9]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="min-w-0 flex-1">
+          <div>
+            {sections.map((section) => (
+              <section id={`section-${index + 1}`} key={section.title} className="py-4">
+                <div className="min-w-0">
                     <h2 className="font-display text-[22px] font-extrabold tracking-[-.035em] text-[#030D75] sm:text-[25px]">{section.title}</h2>
                     {section.paragraphs?.map((paragraph) => (
                       <p key={paragraph} className="mt-4 text-[15px] leading-7 text-[#53617f]">{paragraph.includes("academy@jeroid.co") ? <>{paragraph.split("academy@jeroid.co")[0]}<a href="mailto:academy@jeroid.co" className="font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">academy@jeroid.co</a>{paragraph.split("academy@jeroid.co")[1]}</> : paragraph}</p>
@@ -131,17 +110,10 @@ export default function PrivacyPolicyPage() {
                         ))}
                       </ul>
                     )}
-                  </div>
                 </div>
               </section>
             ))}
           </div>
-          <div className="mt-8 rounded-xl border border-[#d9edf7] bg-[#f3fbff] p-5 sm:p-6">
-            <p className="font-display text-lg font-extrabold">Need help or want to make a request?</p>
-            <p className="mt-2 text-sm leading-6 text-[#53617f]">Contact our team about your personal information, account, or this policy.</p>
-            <a href="mailto:academy@jeroid.co" className="mt-4 inline-flex min-h-11 items-center justify-center font-semibold text-[#030D75] underline decoration-[#00AFEF] underline-offset-4">Email Jeroid Academy <span aria-hidden="true" className="ml-2">↗</span></a>
-          </div>
-          <p className="mt-8 text-xs leading-6 text-[#7b85a2]">This page reflects the policy text provided for the Jeroid Academy prototype.</p>
         </article>
       </div>
       <SiteFooter />
